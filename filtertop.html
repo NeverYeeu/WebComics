@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="/img/logo.jpg" >
+	<link rel="stylesheet" href="./fonts/fontawesome-free-6.2.1-web/css/all.min.css">
+	<link rel="stylesheet" href="./css/top.css">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/responsive.css">
+	<title>Rank - Bảng Xếp Hạng</title>
+</head>
+<body>
+	<header><!-- JS --></header>
+	<div class="sortComic-js" style="display: none"></div>
+	<div id="container">
+		<div class="column">
+			<div class="comic-history">
+				<a href="./index.html" class="comic-history_info history_info-link">Home</a>
+				<span><i class="fa-solid fa-angles-right"></i></span>
+				<a href="" class="comic-history_info history_info-link change-name">Bảng xếp hạng</a>
+					<!-- ChangeNameChap -->
+				</span>
+			</div>
+			<div class="list-box">
+				<div class="box-filter">
+					<h3><i class="fa-solid fa-ranking-star"></i> Bảng xếp hạng -<span class="name-top">Top ngày</span> </h3>
+					<span>
+						<p>Bạn có thể tìm truyện bằng cách chọn các nút dưới đây!</p>
+						<div class="circle-notice"></div>
+					</span>
+					<ul class="top-comics">
+						<h4>Top :</h4>
+						<li><span class="colorBack top-comic top_day ">Top Ngày</span></li>
+						<li><span class="top-comic top_week">Top Tuần</span></li>
+						<li><span class="top-comic top_month">Top Tháng</span></li>
+						<li><span class="top-comic top_year ">Top Year</span></li>
+						<li><span class="top-comic top_like">Top Like </span></li>
+					</ul>
+					<div class="filter_comics-list">
+						<div class="comics-right_list list-top_day">
+							<!-- Dùng js để thêm truyện tranh -->
+						</div>
+						<div class="comics-right_list list-top_week">
+							<!-- Dùng js để thêm truyện tranh -->
+						</div>
+						<div class="comics-right_list list-top_month">
+							<!-- Dùng js để thêm truyện tranh -->
+						</div>
+						<div class="comics-right_list list-top_year">
+							<!-- Dùng js để thêm truyện tranh -->
+						</div>
+						<div class="comics-right_list list-top_like">
+							<!-- Dùng js để thêm truyện tranh -->
+						</div>
+						<div class="comics-right_list list-top_random">
+							<!-- Dùng js để thêm truyện tranh -->
+						</div>
+					</div>
+
+					<div class="wrap-list_page">
+						<i class="fa-solid fa-chevron-left prev-page"></i>
+						<ul class="listPage">
+						</ul>
+						<i class="fa-solid fa-chevron-right next-page"></i>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div id="nav-website">
+		<div class="website-link close">
+			<a href="#searchBar" class="link_page underline">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</a>
+			<a href="./index.html" class="link_page">
+				<i class="fa-solid fa-house"></i>
+			</a>
+			<a href="./acount.html" class="link_page">
+				<i class="fa-solid fa-user"></i>
+			</a>
+		</div>
+		<div class="website-icon">
+			<input type="checkbox" id="checkbox">
+			<label for="checkbox" class="toggle">
+				<div class="bars" id="bar1"></div>
+				<div class="bars" id="bar2"></div>
+				<div class="bars" id="bar3"></div>
+			</label>
+		</div>
+	</div>
+	<footer><!--JS--></footer>
+</body>
+<script type="module" src="./js/sortComic.js"></script>
+<script type="module" src="./js/web.js"></script>
+
+</html>

@@ -1,0 +1,128 @@
+@media only screen and (max-width: 1024px) {
+	.logo{
+		font-size: 3vw;
+	}
+	#navIcon{display: none}
+	.comics-right_list{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}					
+@media only screen and (max-width: 768px) {
+	.logo{
+		font-size: 26px;
+		margin-left: 20px;
+	}
+	#navIcon{display: none}
+	.user-log{ margin-right: 12px;}
+	.content_comic-img{
+		width: 160px;
+		height: 220px;
+	}
+	.comics-right_list{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.update-comics{
+		grid-template-columns: repeat(2, 1fr)
+	}
+}					
+					
+@media only screen and (max-width: 640px) {
+	.column{width: 100%}
+	.header-website{position: relative}
+	.logo{
+		font-size: 16px;
+	}
+	.hello{display: none}
+	.nav-list{ 
+		position: absolute;
+		top: 100%; left: -6px;
+		width: 101%;
+		display: none;
+	}
+	.nav-list.open{display: block}
+	.filter-list_link{
+		background-color: var(--box1-color);
+		border-bottom: 1px solid var(--border-color);
+		padding: 6px 12px;
+	}
+	#navIcon{
+		display: block;
+		margin-right: 20px;
+		font-size: 26px;
+	}
+	.user-log{display: none}
+	/* update-date----------------------------------------------*/
+	.comics_update .update-date{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.comics_update .update-comics{
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr)
+	}
+	.update-comic{width: 100%;}
+	.content-comics{ display: block;}
+	.comics-left{
+		width: 100%;
+		margin: 20px 0px;
+	}
+	.comics-right_list{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.comic-right_header{ font-size: 16px}
+
+	/* ---------------------------------------Chap.html--------------------------------- */
+	.list_chap-box{
+		position: fixed;
+		bottom: 0; right: 0; left: 0;
+		margin: 120px auto;
+		width: 460px;
+		font-size: 18px;
+		padding: 12px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+		background-color: var(--box1-color);
+		z-index: 111;
+		display: none;
+		cursor: default;
+	}
+	.list-chap{
+		margin-top: 20px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 4px;
+		row-gap: 6px;
+		list-style: none;
+		max-height: 344px;
+		overflow-y: scroll;
+	}
+
+	.list-info_name{font-size: 4vw;}
+	.list-info_chapter{font-size: 3vw;}
+}					
+					
+@media only screen and (max-width: 480px) {
+	.update-date{
+		display: block;
+	}
+	.update-comics{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.comics-right_list{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+
+	/* account.html-------------------------------------------------- */
+	.form-box{
+		width: 100%;
+		margin: 40px 6px;
+	}
+}					
