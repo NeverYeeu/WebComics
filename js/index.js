@@ -36,7 +36,7 @@ function moveSlide() {
 		$('.slide-icon_left').addEventListener('click', prevSlide);
 	setInterval(() =>{
 		nextSlide();
-	}, 2000);
+	}, 20000);
 }
 moveSlide();
 
