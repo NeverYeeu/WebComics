@@ -127,7 +127,20 @@ $('.genre-btn > button:nth-child(2)').addEventListener('click', () => {
 		})
 	}
 	activeBtn();
-
+var boxGenre = $('.box-genre');
+const genreBtn = $('.top_genre');
+const genreOverlay = $('.genre_overlay');
+if(genreBtn) {
+	genreBtn.addEventListener('click', () => {
+		boxGenre.classList.toggle('open');
+		genreOverlay.classList.toggle('open')
+	})
+}
+genreOverlay.onclick = () => {
+	boxGenre.classList.remove('open')
+	genreOverlay.classList.remove('open')
+	// genreBtn.classList.remove('colorBack')
+}
 function renderComics(item) {
 	var {linkComic, linkImg, altImg, viewer, liked, linkComic, nameComic, linkChap, nameChap, updateChap} = item
 	return (`

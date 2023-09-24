@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="./img/logo.jpg" >
+	<link rel="icon" type="image/png" href="img/logo.jpg" >
 	<script src="https://kit.fontawesome.com/cf2b91a915.js" crossorigin="anonymous"></script>						
-	<link rel="stylesheet" href="./css/web.css">
-	<link rel="stylesheet" href="./css/top.css">
-	<link rel="stylesheet" href="./css/genre.css">
-	<link rel="stylesheet" href="./css/responsive.css">
+	<link rel="stylesheet" href="css/web.css">
+	<link rel="stylesheet" href="css/top.css">
+	<link rel="stylesheet" href="css/genre.css">
+	<link rel="stylesheet" href="css/responsive.css">
 	<title>Thể Loại</title>
 </head>
 <body>
@@ -34,6 +34,7 @@
 						<li><span class="colorBack top-comic top_day ">Top Ngày</span></li>
 						<li><span class="top-comic top_like">Top Like </span></li>
 						<li><span class="top-comic top_radom">Random ? </span></li>
+						<li><span class="top-comic top_genre">Thể Loại</span></li>
 					</ul>
 					<div class="filter_comics-list">
 						<div class="comics-right_list list-top_day">
@@ -56,22 +57,24 @@
 				</div>
 				<div class="box-genre">
 					<h4>Genre</h4>
-					<ul class="genre-list">
-						<!--Genre.js-->
-					</ul>
-					<div class="genre-chapter">
-						<span>Tìm kiếm theo: Chapters</span>
-						<select name="" id="number-chapter">
-							<option value="under-100">&#60 100 Chapter</option>
-							<option value="between-100&200">100 &#60Chapter &#60 200</option>
-							<option value="between-200&500">200 &#60 Chapter &#60 500</option>
-							<option value="on-500">500 &#60Chapter</option>
-						</select>
-
-					</div>
-					<div class="genre-btn">
-						<button>Search...</button>
-						<button>Tất cả</button>
+					<div class="genre_wrap">
+						<ul class="genre-list">
+							<!--Genre.js-->
+						</ul>
+						<div class="genre-chapter">
+							<span>Tìm kiếm theo: Chapters</span>
+							<select name="" id="number-chapter">
+								<option value="under-100">&#60 100 Chapter</option>
+								<option value="between-100&200">100 &#60Chapter &#60 200</option>
+								<option value="between-200&500">200 &#60 Chapter &#60 500</option>
+								<option value="on-500">500 &#60Chapter</option>
+							</select>
+	
+						</div>
+						<div class="genre-btn">
+							<button>Search...</button>
+							<button>Tất cả</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -98,8 +101,9 @@
 			</label>
 		</div>
 	</div>
+	<div class="genre_overlay"></div>
 	<footer><!--JS--></footer>
 </body>
-<script type="module" src="./js/genre.js"></script>
-<script type="module" src="./js/web.js"></script>
+<script type="module" src="js/genre.js"></script>
+<script type="module" src="js/web.js"></script>
 </html>

@@ -27,8 +27,10 @@
 	.update-comics{
 		grid-template-columns: repeat(2, 1fr)
 	}
-}					
-					
+}		
+			
+/*ReadicCom.html----------------------------------------------------------  */
+
 @media only screen and (max-width: 640px) {
 	.column{width: 100%}
 	.header-website{position: relative}
@@ -38,15 +40,15 @@
 	.hello{display: none}
 	.nav-list{ 
 		position: absolute;
-		top: 100%; left: -6px;
-		width: 101%;
+		top: 100%; left: -8px;
+		width: 102%;
 		display: none;
 	}
 	.nav-list.open{display: block}
 	.filter-list_link{
 		background-color: var(--box1-color);
 		border-bottom: 1px solid var(--border-color);
-		padding: 6px 12px;
+		padding: 14px 12px;
 	}
 	#navIcon{
 		display: block;
@@ -76,7 +78,7 @@
 	}
 	.comic-right_header{ font-size: 16px}
 
-	/* ---------------------------------------Chap.html--------------------------------- */
+	/* Chap.html------------------------------------------------------------------- */
 	.list_chap-box{
 		position: fixed;
 		bottom: 0; right: 0; left: 0;
@@ -102,7 +104,7 @@
 		overflow-y: scroll;
 	}
 
-	.list-info_name{font-size: 4vw;}
+	.list-info_name{font-size: 3.6vw;}
 	.list-info_chapter{font-size: 3vw;}
 }					
 					
@@ -118,11 +120,99 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
+	/*  */
 
-
+	.wrap-search{
+		position: relative;
+	}
+	.search-icon{
+		position: absolute;
+		top: 2px; right: 2px;
+	}
+	.column > .container{
+		display: block;
+	}
+	.wrapper-trend{
+		width: 100%;
+		margin: 0;
+	}
+	.comics-box{
+		width: 100%;
+	}
+	.infor-comic_img{
+		width: 160px;
+	}
+	.infor-comic_img> img{
+		object-fit: cover;
+	}
+	.img-link_read{
+		text-align: center;
+	}
+	.comic_name-rate{
+		position: absolute;
+		bottom: 0;
+		left: -270px;
+	}
+	.chapter_list-time{
+		font-size: 11px;
+	}
+	.infor-others_list {
+		gap: 0;
+	}
+	.box_infor-chapter{
+		padding: 0;
+	}
+	.box_infor-chapter h2 {
+		padding: 12px;
+	}
+	#comic-list{
+		width: auto;
+	}
+	.box_infor-chapter ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	/* rank.html----------------------------------------------------- */
+	.box-filter > h3{
+		font-size: 4vw;
+	}
+	.box-filter > span {
+		font-size: 3.5vw;
+	}
+	.top-comic {
+		font-size: 3vw;
+	}
+	/* image.html---------------------------------------------------- */
+	.list-image{
+		column-count: 2;
+	}
 	/* account.html-------------------------------------------------- */
 	.form-box{
 		width: 100%;
 		margin: 40px 6px;
+	}
+	/* genre.html----------------------------------------------------- */
+	.top_genre{display: block}
+	.box-genre{
+		position: fixed;
+		top: 0; right: 0; left: 0;
+		margin: 100px auto;
+		width: 90%;
+		display: none;
+		z-index: 99
+	}
+	.genre-list{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.box-genre.open{display: block}
+	.genre_overlay{
+		position: fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+		display: none;
+	}
+	.genre_overlay.open{display: block}
+	.list_check{
+		font-size: 3vw;
 	}
 }					

@@ -133,7 +133,7 @@
 	right: 0px;
 }
 .rating {
-	display: inline-block;
+	display: block;
 }
 
 .rating input {
@@ -289,7 +289,7 @@ transition: color 0.3s;
 	display: block;
 }
 .chapter_list-time{
-	font-size: 0.8vw;
+	font-size: 12px;
 	text-transform: capitalize;
 	font-style: italic;
 	opacity: 0.8;
