@@ -167,6 +167,7 @@ header{
     padding: 4px 36px 4px 12px;
     outline: none;
     z-index: 123;
+	min-width: 100px;
 }
 .search-icon{
 	position: relative;
