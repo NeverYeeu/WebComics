@@ -109,6 +109,7 @@
 }					
 					
 @media only screen and (max-width: 480px) {
+	.logo{width: 140px;}
 	.update-date{
 		display: block;
 	}
@@ -124,10 +125,20 @@
 
 	.wrap-search{
 		position: relative;
+		margin-left: 100px;
+	}
+	#searchBar{
+		position: fixed;
+    	top: 45px;
+   		width: 300px;
+    	left: 14%;
+    	margin: 20px auto;
 	}
 	.search-icon{
-		position: absolute;
-		top: 2px; right: 2px;
+		
+	}
+	.wrap-search_comics{
+		width: 300px;
 	}
 	.column > .container{
 		display: block;
@@ -139,10 +150,13 @@
 	.comics-box{
 		width: 100%;
 	}
-	.infor-comic_img{
-		width: 160px;
+	.wrap-search_comics{
+		position: absolute;
+    	left: -233px;
+    	top: 80px;
 	}
-	.infor-comic_img> img{
+	.comic-box_img{
+		width: 50px; height: 50px;
 		object-fit: cover;
 	}
 	.img-link_read{
