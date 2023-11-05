@@ -130,7 +130,6 @@ function searchComics(arr) {
 //thêm màu khi hover vào nav
 var changeColor = $$('.filter-list_link');
 var boxChange = $$('.filter-list_wrapper');
-console.log(boxChange)
 	boxChange[0].onmousemove = () =>{
 		changeColor[1].classList.add('color-primary');
 	}

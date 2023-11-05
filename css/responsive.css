@@ -159,19 +159,50 @@
 		width: 50px; height: 50px;
 		object-fit: cover;
 	}
-	.img-link_read{
-		text-align: center;
+
+	/* comic.html---------------------------------------------------- */
+	
+	.infor-comic_wrapper{
+		display: block;
+		margin: 0 auto;
+	}
+	.infor-comic_img{
+		width: 100%;
+	}
+	.infor-comic_img > img{
+		width: 200px;
+		display: flex;
+		margin: 0 auto;
 	}
 	.comic_name-rate{
 		position: absolute;
 		bottom: 0;
-		left: -270px;
 	}
+	.comic_img-link{
+		width: 100%;
+	}
+	.img-link_read{
+		display: block;
+		text-align: center;
+		width: 120px;
+		padding: 8px;
+	}
+	.comic_follow {
+		top: -320px;
+	}
+	.others_text-plot{
+		font-size: 14px;
+	}
+	.infor-others_text li{
+		max-height: 120px;
+	}
+	/* ---------------------------------------------------------------- */
 	.chapter_list-time{
 		font-size: 11px;
 	}
 	.infor-others_list {
 		gap: 0;
+		text-align: center;
 	}
 	.box_infor-chapter{
 		padding: 0;
@@ -185,6 +216,10 @@
 	.box_infor-chapter ul {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.infor-comic_img{
+		margin: 20px auto;
 	}
 	/* rank.html----------------------------------------------------- */
 	.box-filter > h3{
