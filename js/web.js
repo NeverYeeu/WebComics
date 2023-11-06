@@ -51,18 +51,21 @@ if (header) {
 				<li class="filter-list"><a class="filter-list_link" href="">Light novel</a></li>	
 			</ul>
 			<div class="wrap-search">
-					<input type="text" placeholder="Search..." id="searchBar" name="searchBar">
-					<i class="fa-solid fa-magnifying-glass search-icon "></i>
+					<div class="search-input"><input type="text" placeholder="Search..." id="searchBar" name="searchBar"></div> 
+					<div class="search-icon">
+						<i class="fa-solid fa-magnifying-glass open"></i>
+						<i class="fa-solid fa-xmark"></i>
+					</div>
 					<div class="wrap-search_comics">
 						<header>Kết quả tìm kiếm:</header>
 						<div class="search_comic-info">
-							<!-- <a href="" class="search_comic-box">
+							<a href="" class="search_comic-box">
 								<img src="./img/background.jpg" alt="" class="comic-box_img">
 								<div class="comic-box_info">
 									<span>Onepiece</span>
 									<span class="box_info-genre">Anime</span>
 								</div>
-							</a> -->
+							</a>
 						</div>
 						<div class="overlay-close"></div>
 					</div>

@@ -1,20 +1,24 @@
-import {comics} from "../api/comics.js"
+// import {comics} from "../api/comics.js"
+import {comics} from "../api/src.js"
+
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
-	export {$, $$}
+export{$, $$}
+// Lâyys gia tri comic--------------------------------------------------------------
+let getComic = comics.comic;
 // Tạo danh sách truyện nhiều lượt xem ---------------------------------------------
-const newComics = comics.reverse()
+const newComics = getComic.reverse()
 const render = newComics.map(renderComics).join('')
 	export {render} 
-const randomComics = [...new Set(comics.map((item) => {return item}))];
+const randomComics = [...new Set(getComic.map((item) => {return item}))];
 // Tạo mảng ngẫu nhiên--------------------------------------------------------------
 for (var i = randomComics.length - 1; i> 0; i--) {
 	var j = Math.floor(Math.random() * (i + 1));
 	[randomComics[i],  randomComics[j]] = [randomComics[j], randomComics[i]]
 }
 // 
-const likeComics = [...new Set(comics.map((item) => item))]
-const viewComics = [...new Set(comics.map((item) => item))]
+const likeComics = [...new Set(getComic.map((item) => item))]
+const viewComics = [...new Set(getComic.map((item) => item))]
 likeComics.sort((a, b) => b.liked - a.liked)
 viewComics.sort((a, b) => b.viewer - a.viewer)
 
@@ -25,11 +29,14 @@ const handleRandom = randomComics.map(renderRank).join('');
 export {handleRandom, handleLike, handleViewer}
 export {likeComics, viewComics, randomComics}
 function renderComics(item) {
-	var {linkComic, linkImg, altImg, viewer, liked, linkComic, nameComic, linkChap, nameChap, updateChap} = item
+	let getChapter = item.listChapter.length;
+	let nameChap = item.listChapter[getChapter - 1].nameChapter
+
+	var {linkComic, linkImage, nameComic, viewer, liked, linkChap, updateChap} = item
 	return (`
 		<div class="right_list-info">
 			<a href=${linkComic} class="list-info_wrapper">
-				<img src=${linkImg} alt=${altImg} class="list-info_img">
+				<img src=${linkImage} alt=${nameComic} class="list-info_img">
 				<div class="list-info_interact">
 					<span class="info_interact-viewer">
 						<i class="fa-regular fa-eye"></i>
@@ -53,12 +60,14 @@ function renderComics(item) {
 }
 // Tạo bảng xếp hạng truyện---------------------------------------------------------
 function renderRank(item) {
-	var {nameComic, linkImg,altImg, linkChap, nameChap, linkComic , viewer} = item;
+	let getChapter = item.listChapter.length;
+	let nameChap = item.listChapter[getChapter - 1].nameChapter
+	var {nameComic, linkImage,nameComic, linkChap, linkComic , viewer} = item;
 			// var nameComic = item.nameComic;
 			return (
 			`
 			<div class="comic-wrap">
-				<a href=${linkComic }><img src=${linkImg} alt=${altImg} class="comic-wrap_img"></a>
+				<a href=${linkComic }><img src=${linkImage} alt=${nameComic} class="comic-wrap_img"></a>
 				<div class="comic-wrap_info">
 					<a href=${linkComic } class="wrap_info-name">${nameComic}</a>
 					<a href =${linkChap} class="wrap_info-chap">${nameChap}</a>
@@ -73,11 +82,13 @@ function renderRank(item) {
 }
 
 function renderSlide(item) {
-	var {nameComic, nameChap, linkComic , linkImg, altImg} = item;
+	let getChapter = item.listChapter.length;
+	let nameChap = item.listChapter[getChapter - 1].nameChapter
+	var {nameComic, linkComic , linkImage} = item;
 	return (
 		`
 		<a href=${linkComic } class="content_comic">
-			<img src=${linkImg} alt=${altImg} class="content_comic-img">
+			<img src=${linkImage} alt=${nameComic} class="content_comic-img">
 
 			<div class="content_comic-name">
 				<div>${nameComic}</div>
@@ -179,8 +190,7 @@ function renderBoxAdmin() {
 	
 	`)
 }
-export {}
-
+// 
 function handleNavWeb() {
 	const linkBox = document.querySelector('.website-link');
 	const controlLinkBox = document.querySelector('.toggle');
@@ -188,7 +198,7 @@ function handleNavWeb() {
 		linkBox.classList.toggle('close');
 	};
 }
-
+// Render Comment----------------------------------------------------------------
 function renderComment() {
 	return (`
 	<div class="infor-comments_header">Bình luận
@@ -203,7 +213,24 @@ function renderComment() {
 	</div>
 	`)
 }
+// 
+function handleWrapSearch() {
+	let searchbar = $('.search-input');
+	let iconSearchs = $$('.search-icon > i');
+	function handleIcon() {
+		iconSearchs[0].addEventListener('click', () => {
+			iconSearchs[0].classList.remove('open')
+			iconSearchs[1].classList.add('open')
+			searchbar.classList.add('open')
+		})
+		iconSearchs[1].addEventListener('click', () => {
+			iconSearchs[1].classList.remove('open')
+			iconSearchs[0].classList.add('open')
+			searchbar.classList.toggle('open')
+		})
+	} handleIcon();
+}
 export{
-	renderComment, handleNavWeb, pagination,
+	renderComment, handleNavWeb, pagination,handleWrapSearch,
 	renderBoxAdmin
 }

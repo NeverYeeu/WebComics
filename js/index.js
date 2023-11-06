@@ -1,6 +1,6 @@
 import {comics} from "../api/comics.js"
 import {$, $$} from "./function.js"
-import {pagination} from "./function.js"
+import {handleWrapSearch, pagination} from "./function.js"
 import {render, handleRandom, handleLike, handleViewer} from "./function.js"
 // --------------------------------------------------------------------------------------------
 const comicList = $('.comics-right_list');
@@ -13,8 +13,7 @@ boxSlide.innerHTML = handleLike;
 comicList.innerHTML = render;
 boxRanks[0].innerHTML = handleViewer;
 boxRanks[1].innerHTML = handleRandom;
-loadDay(comics);
-
+loadDay(comics); handleWrapSearch();
 function moveSlide() {
 	var sizeLinks = $$('.content_comic-img');
 	var sizeLink = sizeLinks[0].clientWidth + 2.4 + 12;

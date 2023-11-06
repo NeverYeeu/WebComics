@@ -127,13 +127,21 @@
 		position: relative;
 		margin-left: 100px;
 	}
-	#searchBar{
+	.search-input{
 		position: fixed;
-    	top: 45px;
-   		width: 300px;
-    	left: 14%;
-    	margin: 20px auto;
+		top: 45px;
+		width: 300px;
+		left: 9%;
+		display: none;
 	}
+	#searchBar{
+		display: flex;
+		width: 100%;
+		margin-top: 20px;
+		justify-content: center;
+    	/* margin: 20px auto; */
+	}
+	#searchBar.open{display: block;}
 	.search-icon{
 		
 	}

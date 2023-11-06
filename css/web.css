@@ -52,7 +52,6 @@ body{
 	border-radius: 3px;
 	background-color: var(--primary-color);
 }
-
 .close{
 	display: none;
 }
@@ -89,13 +88,6 @@ body{
 	background-color: red;
 	color: var(--color5-cool);
 	border-bottom: 1px solid var(--color5-cool);
-}
-.select-it{
-	color: var(--primary-color);
-	border-bottom: 2px solid var(--primary-color);
-}
-.select-it i{
-	color: var(--primary-color);
 }
 .line {
 	position: absolute;
@@ -169,7 +161,19 @@ header{
     z-index: 123;
 	min-width: 100px;
 }
-.search-icon{
+.search-input{
+	width: 100%;
+	position: relative;
+	z-index: 200;
+}
+.search-input.open{display: block}
+
+.search-icon:hover{
+	color: var(--primary-color);
+	background-color: var(--white-color);
+	cursor: pointer;
+}
+.search-icon > i{
 	position: relative;
 	top: 0px; right: 2px; bottom: 2px;
 	border: 1px solid var(--border-color);
@@ -179,15 +183,14 @@ header{
 	color: var(--white-color);
 	background-color: var(--primary-color);
 	z-index: 123;
+	display: none;
 }
-
-.search-icon:hover{
-	color: var(--primary-color);
-	background-color: var(--white-color);
-	cursor: pointer;
+.search-icon > i.open{
+	display: block;
 }
 .wrap-search_comics{
 	position: absolute;
+	width: 300px;
 	right: 0; top: 36px; left: 0;
 	background-color: #17191A;
 	padding: 12px;
@@ -222,8 +225,6 @@ header{
 .search_comic-box:hover{
 	background-color: var(--color1-cool);
 }
-#navIcon{display: none};
-/* ------------------------------------------------------------------ */
 .comic-box_img{
 	width: 50px;
 	height: 50px;
@@ -231,6 +232,9 @@ header{
 	border-radius: 2px;
 	object-fit: cover;
 }
+#navIcon{display: none};
+/* ------------------------------------------------------------------ */
+
 .comic-box_info{
 	width: 100%;
 }
