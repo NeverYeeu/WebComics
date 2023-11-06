@@ -1,6 +1,5 @@
-import {chapterComics} from "../api/comics.js"
-import {handleRandom, handleViewer, renderComment} from "./function.js"
 import {comics} from "../api/src.js"
+import {handleRandom, handleViewer, renderComment} from "./function.js"
 // ---------------------------------------------------------------------------
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -14,12 +13,13 @@ boxRanks[0].innerHTML = handleViewer;
 boxRanks[1].innerHTML = handleRandom;
 $('#comments').innerHTML = renderComment();
 // Ham xu ly truyen tranh------------------------------------------------
+const newComics = comics.comic.reverse();
 function handleComic(){
 	let getName = $('section').getAttribute('id');
 	let nameLength = getName.length;
 	// Lấy giá tri cua truyen tranh
 	let getNumber = getName.slice(10, nameLength);
-	let getValueComic = comics.comic[getNumber];
+	let getValueComic = newComics[getNumber];
 	handleChapter(getValueComic); renderInforComic(getValueComic)
 	renderImgWebsite(getValueComic)
 } handleComic();
