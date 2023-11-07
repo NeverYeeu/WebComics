@@ -7,9 +7,8 @@ const $$ = document.querySelectorAll.bind(document)
 // -----------------------------------Thêm header/ footer------------------------------------
 let header =  $('header');
 let footer = $('footer');
-if (header) {
-	header.innerHTML = (
-		`
+function renderHeader() {
+	return(`
 		<div class="column header-website" >
 			<div class="logo">
 				<a href="/index.html">Readic-Com
@@ -77,23 +76,23 @@ if (header) {
 			</a>
 			<div id="navIcon" ><i class="fa-solid fa-bars"></i></div>
 		</div>
-		`
-	)
-	footer.innerHTML = (
-		`
-		<footer id="footer">
-			<div class="column column-footer" ">
-				<div class="column-footer_left">
-					<p>Copyright © 2023 All Rights Reserved</p>
-				</div>
-				<div class="column-footer_right">
-					
-				</div>
-			</div>
-		</footer>
-		`
-	)
+	`)
 }
+function renderFooter() {
+	return (`
+	<div id="footer">
+		<div class="column column-footer" ">
+			<div class="column-footer_left">
+				<p>Copyright © 2023 All Rights Reserved</p>
+			</div>
+			<div class="column-footer_right">
+				
+			</div>
+		</div>
+	</div>
+	`)
+}
+export {renderHeader, renderFooter}
 //Search bar-------------------------------------------------------------
 const inputSearchBar = document.getElementById('searchBar');
 var boxSearch = $('.wrap-search_comics');

@@ -5,7 +5,7 @@
 	background-color: transparent;
 }
 /* --------------------------------------------------------------- */
-
+section{display: none;}
 .box-comic{
 	border-radius: 4px;
 	background-color: var(--box1-color);

@@ -1,5 +1,6 @@
 import {comics} from "../api/src.js"
-import {handleRandom, handleViewer, renderComment} from "./function.js"
+// import {renderHeader, renderFooter} from "../js/web.js"
+import {handleRandom, handleViewer, renderComment} from "../js/function.js"
 // ---------------------------------------------------------------------------
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -7,6 +8,12 @@ const listChap = $('.list_chap')
 let boxInforComic = $('.box_infor-comic');
 const comicBackground = $('.infor-comic_background img');
 const comicImage = $('.infor-comic_img img');
+// 
+let header = $('header');
+let footer = $('footer');
+// header.innerHTML = renderHeader();
+// footer.innerHTML = renderFooter();
+
 // Chèn link-------------------------------------------------------------------
 var boxRanks = $$('.comis-box_random');
 boxRanks[0].innerHTML = handleViewer;
@@ -21,7 +28,7 @@ function handleComic(){
 	let getNumber = getName.slice(10, nameLength);
 	let getValueComic = newComics[getNumber];
 	handleChapter(getValueComic); renderInforComic(getValueComic)
-	renderImgWebsite(getValueComic)
+	renderImgWebsite(getValueComic); handleNameComic(getValueComic);
 } handleComic();
 
 // // Chèn link vào btn ------------------------------------------------------
@@ -235,3 +242,10 @@ function handleNavComic(){
 		})
 	})
 } handleNavComic();
+
+function handleNameComic(comic){
+	console.log(comic.nameComic)
+	let title = $('title');
+	let historyName = $('.name-comic')
+	historyName.innerText = comic.nameComic;
+} 

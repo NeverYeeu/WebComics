@@ -33,7 +33,7 @@ const comics = {
 		{
 			id: 1,
 			nameComic: "Sekai Saikyou No Shinjuu Tsukai",
-			linkComic: "chapter/ReadicCom-0001/ReadicCom-0001.html",
+			linkComic: "chapter/ReadicCom-0001.html",
 			nameOther: "Sekai Saikyou No Shinjuu Tsukai",
 			nameAuthor: "Yasahashi Rakku Takajocolors",
 			mainCharacter: "Magu",
@@ -55,11 +55,8 @@ const comics = {
 			textPlot: "Mag (Magu) được ban tặng kỹ năng , một kỹ năng có khả năng thu hút quái vật và gây ra thảm họa. Vì vậy, anh ta bị trục xuất khỏi thành phố. Anh quyết định sống một mình trong cabin săn bắn sâu trong núi. Tuy nhiên, ở đó, anh thu hút sự chú ý của các Thần thú: Loa the Dragon (một cô gái xinh đẹp), Fiana the Phoenix (một cô gái xinh đẹp khác) và Kelpie the Maera (một cô gái xinh đẹp khác). Cuối cùng, Mag quyết định sống thoải mái trên núi với các Thần thú. Nhưng kỹ năng không làm cho anh ta dễ dàng …",
 			updateChap: 2,
 			listChapter: [
-				{
-					nameChapter: "Chapter 1",
-					linkChapter: "chapter1",
-					timeUpdate: "2/11/2023"
-				}
+				{nameChapter: "Chapter 1", linkChapter: "ReadicCom-0001/chapter-1.html", timeUpdate: "2/11/2023"},
+				{nameChapter: "Chapter 2", linkChapter: "ReadicCom-0001/chapter-2.html", timeUpdate: "4/11/2023"},
 			],
 			viewer: 22,
 			liked: 6,
@@ -200,5 +197,22 @@ const comics = {
 			viewer: 12,
 			liked: 6,
 		},
+	],
+	"image": [
+		{},
+		{
+			"readicCom1": [
+				{},
+				{
+					id: 0,
+					nameChapter: 1,
+					linkImage: [
+						{src: "https://i.postimg.cc/7hnpLXVs/Sekai-Saikyou-No-Shinjuu-Tsukai-Chapter-1-image-0.jpg"},
+						{src: "https://i.postimg.cc/4yPSGyfj/Sekai-Saikyou-No-Shinjuu-Tsukai-Chapter-1-image-1.jpg"},
+						{src: "https://i.postimg.cc/wTBWJ6TT/Sekai-Saikyou-No-Shinjuu-Tsukai-Chapter-1-image-10.jpg"}
+					]
+				}
+			]
+		}
 	]
 };  export{comics}
