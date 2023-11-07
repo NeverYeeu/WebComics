@@ -37,7 +37,7 @@ function handleComics(){
 			handleHistory(getValue); handleInforName(getValue);
 	} getValueComic();
 	function getValueImage() {
-		let listImage = getImage[getNumber].readicCom1[getChap].linkImage;
+		let listImage = getImage[getNumber].readicCom[getChap].linkImage;
 		handleListImage(listImage);
 	} getValueImage();
 	
