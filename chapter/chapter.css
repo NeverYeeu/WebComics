@@ -1,9 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+}
+:root{
+	--white-color: #faf4f4;
+	--white2-color: #c3c3ba;
+	--border-color: #b3b8bb;
+	--primary-color: #d21573;
+	--column-color: #3d3b3f;
+	--container-color: rgb(24,26,27);
+	--rgba-color: rgba(0, 0, 0, 0.8);
+	--text-color: #ede0e0;
+	--box1-color: #131719;
+	/* --Đọ dài */
+	--column-width: 1140px;
+}
+.column{
+	width: 950px;
+	margin: 0 auto;
+}
+.close{
+	display: none;
+}
+.open{
+	display: block; 
+}
+.wrap-search_comics.open{
+	display: block;
+}
+.list_chap-box.open{
+	display: block;
+}
+.navlist-icon_open.close{
+	display: none;
+}
+.navlist-icon_close.close{
+	display: none;
+}
+.list_chap-icon.not-chap{
+	display: none;
+}
+.top-comic.colorBack{
+	background-color: var(--primary-color);
+}
+/* --------------------------------------------------------------------------------------------------- */
+.comic-history{
+	display: flex; 
+	column-gap: 4px;
+	align-items: center;
+	font-size: 13px;
+	padding: 8px;
+	border-bottom: 1px solid var(--primary-color);
+	border-top: 1px solid var(--primary-color);
+	margin: 20px 0px;
+}
+.comic-history_info{
+	font-size: 13px;
+	font-weight: 400;
+	text-align: center;
+	color: var(--white-color);
+}
+.fa-solid, .fa-regular{
+	color: var(--white-color)
+}
+.change-name{
+	color: var(--white-color);
+}
+.history_info-link{
+	text-decoration: none;
+	font-size: 14px;
+	color: var(--white-color);
+	text-transform: capitalize;
+	padding: 4px 24px;
+	border-radius: 3px;
+}
+.history_info-link:hover{
+	color: var(--primary-color);
+}
+/* History Links ------------------------------------------------------------*/
 #container{
 	background-color: var(--color1-cool);
 }
 .column{
 	background-color: transparent;
-	width: 800px;
+	max-width: 800px;
+	width: 100%
 }
 /* --------------------------------------------------------------- */
 section{display: none;}
@@ -246,11 +331,8 @@ section{display: none;}
     display: none;
 	cursor: default;
 }
-.list_chap-box1{
-    top: 120%; right: 0; 
-}
 .list_chap-box2{
-    top: -500%; right: 0; 
+    top: 120%; right: 0; 
 }
 .list-chap{
 	position: relative;
@@ -334,4 +416,112 @@ section{display: none;}
 }
 .list_chap-icon.not-chap{
 	display: none;
+}
+
+
+/* --------------------------------Nav-website----------------------------- */
+#nav-website{
+	align-items: center;
+}
+.website-link{
+	margin-right: 20px;
+	position: fixed;
+	bottom: 38px;
+	right: 64px;
+	display: flex;
+	column-gap: 2px;
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	background-color: var(--box1-color);
+}
+.website-link.close{
+	display: none;
+}
+.website-link i{
+	font-size: 20px;
+	padding: 12px 18px;
+	border-bottom: 2px solid transparent;
+	transition: all 0.4s ease;
+}
+.website-link i:hover{
+	color: var(--primary-color);
+	border-bottom: 2px solid var(--primary-color);
+}
+.link_page{
+	display: block;
+}
+.website-icon{
+	position: fixed;
+	bottom: 44px;
+	right: 40px;
+}
+#checkbox {
+	display: none;
+ }
+  
+.toggle {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	transition-duration: .5s;
+}
+  
+.bars {
+	width: 100%;
+	height: 4px;
+	background-color: var(--primary-color);
+	border-radius: 4px;
+}
+  
+  #bar2 {
+	transition-duration: .8s;
+  }
+  
+  #bar1,#bar3 {
+	width: 70%;
+  }
+  
+  #checkbox:checked + .toggle .bars {
+	position: absolute;
+	transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+	transform: scaleX(0);
+	transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+	width: 100%;
+	transform: rotate(45deg);
+	transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+	width: 100%;
+	transform: rotate(-45deg);
+	transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle {
+	transition-duration: .5s;
+	transform: rotate(180deg);
+  }
+
+
+@media only screen and (max-width: 480px) {
+	.comic-header p{display: none;}
+	.change-name{
+		display: block;
+	}
+	.change-comic{
+		display: flex;
+		justify-content: flex-end;
+	}
 }
