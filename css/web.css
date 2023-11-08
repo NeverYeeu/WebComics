@@ -17,12 +17,12 @@
 	--text-color: #ede0e0;
 	/* Gam lạnh */
 	/* #021859, #03318C  */
-	--box1-color: #131719;
+	--box1-color: rgb(20, 24, 26);
 	--box2-color: #181A1B;
 
 	--co1-text: linear-gradient(-180deg,transparent,rgba(0,0,0,.78));
 
-	--color1-cool: #1E282D;
+	--color1-cool: rgb(31, 41, 46);
 	--color2-cool : #0C1012;
 	--color3-cool: #035AA6;
 	--color4-cool: #3098D9;

@@ -4,6 +4,8 @@
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	color: #ffffff;
+	/* background-color: #000; */
 
 }
 :root{
@@ -70,6 +72,9 @@
 .change-name{
 	color: var(--white-color);
 }
+.change-comic{
+	color: var(--white-color);
+}
 .history_info-link{
 	text-decoration: none;
 	font-size: 14px;
@@ -83,19 +88,31 @@
 }
 /* History Links ------------------------------------------------------------*/
 #container{
-	background-color: var(--color1-cool);
+	background-color: rgba(31, 41, 46, 0.2);
 }
 .column{
 	background-color: transparent;
 	max-width: 800px;
-	width: 100%
+	width: 100%;
+	position: relative;
+	z-index: 4;
 }
 /* --------------------------------------------------------------- */
 section{display: none;}
+#readicCom-background > img{
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	width: 100%;
+	opacity: 0.8;
+	z-index: -1;
+}
 .box-comic{
 	border-radius: 4px;
-	background-color: var(--box1-color);
+	background-color: rgba(20, 24, 26, 0.8);
 	padding: 12px;
+}
+.box-comic:last-child{
+	padding-bottom: 160px;
 }
 .box-comic > nav{
 	position:sticky;
@@ -113,13 +130,16 @@ section{display: none;}
 	padding: 0px 8px;
 	margin: 24px 0px;
 	text-align: left;
+	display: flex;
+	align-items: center;
+	gap: 16px;
 }
 .comic-update{
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 26px;
 	font-size: 14px;
-	color: #2b2424;
+	color: #fff8f8;
 	font-style: italic;
 	gap: 4px;
 	padding-bottom: 14px;
@@ -350,6 +370,8 @@ section{display: none;}
 	width: 90%;
 	padding: 4px 8px;
 	outline: none;
+	background-color: transparent;
+	border: 1px solid #ccc;
 	z-index: 2;
 }
 .icon-box{
@@ -514,14 +536,33 @@ section{display: none;}
 	transform: rotate(180deg);
   }
 
-
+#back-top{
+	position: fixed; 
+	bottom: 90px; 
+	right: 34px;
+	display: block;
+	border: 1px solid var(--white-color);
+	border-radius: 4px;
+	cursor: pointer;
+	z-index: 999;
+	font-size: 36px;
+	padding: 0px 4px;
+}
 @media only screen and (max-width: 480px) {
-	.comic-header p{display: none;}
-	.change-name{
-		display: block;
+	.comic-header{
+		display: grid;
+		grid-template-columns: 1;
 	}
-	.change-comic{
+	.comic-header p{display: none;}
+	
+	.comic-header .change-comic{
 		display: flex;
 		justify-content: flex-end;
+		font-size: 18px;
+	}
+	.icon-box{
+		right: 4px;
+    	top: 15px;
+    	position: absolute;
 	}
 }

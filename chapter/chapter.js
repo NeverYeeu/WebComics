@@ -7,6 +7,10 @@ const $$ = document.querySelectorAll.bind(document);
 let navPages = $$('.navPage');
 navPages[0].innerHTML = renderNavChapter();
 navPages[1].innerHTML = renderNavChapter();
+let navWebsite = $('#nav-website');
+navWebsite.innerHTML = renderNavWebsite()
+let readicImg = $('#readicCom-background img');
+readicImg.setAttribute('src', 'https://i.postimg.cc/RFgr8qJd/back.jpg' )
 // ---------------------------------------------------------------------------------
 let currentChap = $('#identify-chap').innerText;
 var buttonNav = $$('.list_chap-icon');
@@ -48,7 +52,6 @@ function handleHistory(comic) {
 		comicHistories[0].innerHTML = renderHistory();
 		comicHistories[1].innerHTML = renderHistory();
 		let linkHistories = $$('.comic-history a');
-		console.log(linkHistories)
 		function renderHistory() {
 			return (`
 			<a href="/index.html" class="comic-history_info history_info-link">Home</a>
@@ -262,3 +265,33 @@ function handleInforName(comic) {
 	} renderChapter();
 } 
 
+function renderNavWebsite(){
+	return(`
+	<div class="website-link close">
+		<a href="#searchBar" class="link_page underline">
+			<i class="fa-solid fa-magnifying-glass"></i>
+		</a>
+		<a href="index.html" class="link_page">
+			<i class="fa-solid fa-house"></i>
+		</a>
+		<a href="acount.html" class="link_page">
+			<i class="fa-solid fa-user"></i>
+		</a>
+		<a href="" class="link_page link_page-move">
+			<i class="fa-solid fa-chevron-left "></i>
+		</a>
+		<span class="change-comic link_page-chapter"></span>
+		<a href="" class="link_page link_page-move">
+			<i class="fa-solid fa-chevron-right "></i>
+		</a>
+	</div>
+	<div class="website-icon">
+		<input type="checkbox" id="checkbox">
+		<label for="checkbox" class="toggle">
+			<div class="bars" id="bar1"></div>
+			<div class="bars" id="bar2"></div>
+			<div class="bars" id="bar3"></div>
+		</label>
+	</div>
+	`)
+}
