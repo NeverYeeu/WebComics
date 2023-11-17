@@ -5,8 +5,6 @@ handleNavWeb();
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 // -----------------------------------Thêm header/ footer------------------------------------
-let header =  $('header');
-let footer = $('footer');
 function renderHeader() {
 	return(`
 		<div class="column header-website" >
@@ -94,66 +92,67 @@ function renderFooter() {
 }
 export {renderHeader, renderFooter}
 //Search bar-------------------------------------------------------------
-const inputSearchBar = document.getElementById('searchBar');
-var boxSearch = $('.wrap-search_comics');
-inputSearchBar.addEventListener('keyup',() => {
-	boxSearch.classList.add('open');
-});
-$('.overlay-close').addEventListener('click', () =>{
-	boxSearch.classList.remove('open');
-})
-searchComics(comics)
-function searchComics(arr) {
-	inputSearchBar.addEventListener('keyup', (e) => {
-		const searchData = e.target.value.toLowerCase();
-		
-		const filterData = arr.filter((item) => {
-			return item.nameComic.toLowerCase().includes(searchData);
-		})
-		var displaySearch = (items) =>{
-			const searchComics = $('.search_comic-info');
-			searchComics.innerHTML = items.map((item) => {
-				var {linkImg, nameComic, genre, linkComic } = item;
-				return (`
-							<a href="${linkComic }" class="search_comic-box">
-								<img src=${linkImg} alt="" class="comic-box_img">
-								<div class="comic-box_info">
-									<span>${nameComic}</span>
-									<span class="box_info-genre">${genre}</span>
-								</div>
-							</a>
-						`)
-			}).join('');
-		}
-		displaySearch(filterData);
+function handleSearchBar() {
+	const inputSearchBar = document.getElementById('searchBar');
+	var boxSearch = $('.wrap-search_comics');
+	inputSearchBar.addEventListener('keyup',() => {
+		boxSearch.classList.add('open');
+	});
+	$('.overlay-close').addEventListener('click', () =>{
+		boxSearch.classList.remove('open');
 	})
+	searchComics(comics)
+	function searchComics(arr) {
+		inputSearchBar.addEventListener('keyup', (e) => {
+			const searchData = e.target.value.toLowerCase();
+			
+			const filterData = arr.filter((item) => {
+				return item.nameComic.toLowerCase().includes(searchData);
+			})
+			var displaySearch = (items) =>{
+				const searchComics = $('.search_comic-info');
+				searchComics.innerHTML = items.map((item) => {
+					var {linkImg, nameComic, genre, linkComic } = item;
+					return (`
+								<a href="${linkComic }" class="search_comic-box">
+									<img src=${linkImg} alt="" class="comic-box_img">
+									<div class="comic-box_info">
+										<span>${nameComic}</span>
+										<span class="box_info-genre">${genre}</span>
+									</div>
+								</a>
+							`)
+				}).join('');
+			}
+			displaySearch(filterData);
+		})
+	}
 }
+export {handleSearchBar}
 // -----------------------------Extra Effect when Hover-----------------------------
 //thêm màu khi hover vào nav
-var changeColor = $$('.filter-list_link');
-var boxChange = $$('.filter-list_wrapper');
-	boxChange[0].onmousemove = () =>{
-		changeColor[1].classList.add('color-primary');
+function handleNavBar() {
+	var changeColor = $$('.filter-list_link');
+	var boxChange = $$('.filter-list_wrapper');
+		boxChange[0].onmousemove = () =>{
+			changeColor[1].classList.add('color-primary');
+		}
+		boxChange[0].onmouseout = () =>{
+			changeColor[1].classList.remove('color-primary');
+		}
+		boxChange[1].onmousemove = () =>{
+			changeColor[2].classList.add('color-primary');
+		}
+		boxChange[1].onmouseout = () =>{
+			changeColor[2].classList.remove('color-primary');
+		}
+	function handleNavIcon(){
+		let navIcon = $('#navIcon');
+		let navList = $('.nav-list')
+		navIcon.onclick = () => {
+			navList.classList.toggle('open')
+		}
 	}
-	boxChange[0].onmouseout = () =>{
-		changeColor[1].classList.remove('color-primary');
-	}
-	boxChange[1].onmousemove = () =>{
-		changeColor[2].classList.add('color-primary');
-	}
-	boxChange[1].onmouseout = () =>{
-		changeColor[2].classList.remove('color-primary');
-	}
-function handleNavIcon(){
-	let navIcon = $('#navIcon');
-	let navList = $('.nav-list')
-	navIcon.onclick = () => {
-		navList.classList.toggle('open')
-	}
-}
-handleNavIcon()
-
-
-
-
-
+	handleNavIcon()
+}	
+export {handleNavBar}

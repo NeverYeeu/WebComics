@@ -1,5 +1,6 @@
 import {comics} from "../api/comics.js"
 import {$, $$} from "./function.js"
+import {renderHeader, renderFooter, handleSearchBar, handleNavBar} from "./web.js"
 import {handleWrapSearch, pagination} from "./function.js"
 import {render, handleRandom, handleLike, handleViewer} from "./function.js"
 // --------------------------------------------------------------------------------------------
@@ -9,35 +10,55 @@ const boxSlide = $('.slide-content');
 var dayOfWeeks = $$('.day-week');
 let updateList = $('.update-comics');
 
+const header = $('header')
+const footer = $('footer')
+header.innerHTML = renderHeader();
+footer.innerHTML = renderFooter();
+	handleSearchBar(); handleNavBar()
+	// 
 boxSlide.innerHTML = handleLike;
 comicList.innerHTML = render;
 boxRanks[0].innerHTML = handleViewer;
 boxRanks[1].innerHTML = handleRandom;
 loadDay(comics); handleWrapSearch();
-function moveSlide() {
+
+
+function handlMoveSlide() {
+	let sizeScreen = screen.width;
 	var sizeLinks = $$('.content_comic-img');
-	var sizeLink = sizeLinks[0].clientWidth + 2.4 + 12;
+	if  (sizeScreen <= 480) {
+		sizeLinks.forEach((img) => {
+			img.style.width = (sizeScreen / 2 ) - 6  + 'px'
+		})
+		moveSlide(2)
+	}
+	else {
+		moveSlide(5)
+	}
 	var slideContent = $('.slide-content');
-	var moveSlide = 0;
-	var maxLink = sizeLink * (sizeLinks.length - 5 );
-		maxLink -= sizeLink;
-	var nextSlide = () => {
-		if (moveSlide < maxLink) moveSlide += sizeLink;
-		else moveSlide = 0; 
-		slideContent.style.marginLeft = '-' + moveSlide + 'px';
+	function moveSlide(numImg) {
+		var sizeLink = sizeLinks[0].clientWidth + 2.4 + 12;
+		var moveSlide = 0;
+		var maxLink = sizeLink * (sizeLinks.length - +numImg );
+		// maxLink -= sizeLink;
+		var nextSlide = () => {
+			if (moveSlide < maxLink) {moveSlide =  moveSlide + sizeLink;}
+			else {moveSlide = 0; }
+			slideContent.style.marginLeft = '-' + moveSlide + 'px';
+		}
+		var prevSlide = () => {
+			if (moveSlide == 0) {moveSlide = maxLink;}
+			else {moveSlide -= sizeLink;}
+			slideContent.style.marginLeft = '-' + moveSlide + 'px';
+		}
+			$('.slide-icon_right').addEventListener('click', nextSlide);
+			$('.slide-icon_left').addEventListener('click', prevSlide);
+		setInterval(() =>{
+			nextSlide();
+		}, 20000);
 	}
-	var prevSlide = () => {
-		if (moveSlide == 0) moveSlide = maxLink;
-		else moveSlide -= sizeLink;
-		slideContent.style.marginLeft = '-' + moveSlide + 'px';
-	}
-		$('.slide-icon_right').addEventListener('click', nextSlide);
-		$('.slide-icon_left').addEventListener('click', prevSlide);
-	setInterval(() =>{
-		nextSlide();
-	}, 20000);
 }
-moveSlide();
+handlMoveSlide();
 
 function loadDay(arr) {
 	//Lấy ngày hôm nay truyện cập nhật

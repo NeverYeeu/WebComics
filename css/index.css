@@ -258,6 +258,8 @@
 }
 .update-date li.assigned{
 	opacity: 1;
+	color: var(--primary-color);
+
 }
 .update-date li:hover{
 	opacity: 1;
