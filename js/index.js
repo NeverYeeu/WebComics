@@ -55,7 +55,7 @@ function handlMoveSlide() {
 			$('.slide-icon_left').addEventListener('click', prevSlide);
 		setInterval(() =>{
 			nextSlide();
-		}, 20000);
+		}, 10000);
 	}
 }
 handlMoveSlide();

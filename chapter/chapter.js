@@ -54,7 +54,7 @@ function handleHistory(comic) {
 		let linkHistories = $$('.comic-history a');
 		function renderHistory() {
 			return (`
-			<a href="/index.html" class="comic-history_info history_info-link">Home</a>
+			<a href="//index.html" class="comic-history_info history_info-link">Home</a>
 				<span><i class="fa-solid fa-angles-right"></i></span>
 			<a class="comic-history_info history_info-link change-name">change-name</a>
 				<span><i class="fa-solid fa-angles-right"></i></span>
