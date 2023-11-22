@@ -178,7 +178,7 @@ const comics = {
 			textPlot: "text_plot",
 			updateChap: 2,
 			listChapter: [
-				{ nameChapter: "Chapter 1", linkChapter: "ReadicCom-0004/chapter-1.html", timeUpdate: "22/11/2023"}
+				{ nameChapter: "Chapter 1", linkChapter: "ReadicCom-0005/chapter-1.html", timeUpdate: "22/11/2023"}
 			],
 			viewer: 0,
 			liked: 0,
