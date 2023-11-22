@@ -22,8 +22,12 @@
 	--column-width: 1140px;
 }
 .column{
-	width: 950px;
 	margin: 0 auto;
+	background-color: transparent;
+	max-width: 1000px;
+	width: 100%;
+	position: relative;
+	z-index: 4;
 }
 .close{
 	display: none;
@@ -90,13 +94,7 @@
 #container{
 	background-color: rgba(31, 41, 46, 0.2);
 }
-.column{
-	background-color: transparent;
-	max-width: 800px;
-	width: 100%;
-	position: relative;
-	z-index: 4;
-}
+
 /* --------------------------------------------------------------- */
 section{display: none;}
 #readicCom-background > img{
@@ -450,7 +448,8 @@ section{display: none;}
 	align-items: center;
 	z-index: 999;
 	position: fixed;
-	bottom: 8px; right: 4px;
+	bottom: 18px; right: 14px;
+	display: flex;
 }
 .website-link{
 	margin-right: 20px;
@@ -538,8 +537,8 @@ section{display: none;}
 
 #back-top{
 	position: fixed; 
-	bottom: 90px; 
-	right: 34px;
+	bottom: 58px;
+    right: 10px;
 	display: block;
 	border: 1px solid var(--white-color);
 	border-radius: 4px;
