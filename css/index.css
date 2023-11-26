@@ -116,7 +116,7 @@
 .comics-right_list{	
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	column-gap: 14px;
+	column-gap: 8px;
 	row-gap: 14px;
 }
 .right_list-info{

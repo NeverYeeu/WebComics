@@ -7,6 +7,9 @@
 
 }
 :root{
+	--white: #ffffff;
+	--web: #d21573;
+
 	--white-color: #faf4f4;
 	--white2-color: #c3c3ba;
 	--border-color: #b3b8bb;
@@ -123,6 +126,7 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	column-gap: 12px;
+	background: rgba(0,0,0,0.8);
 }
 .logo{
 	position: relative;
@@ -172,7 +176,6 @@ header{
 
 .search-icon:hover{
 	color: var(--primary-color);
-	background-color: var(--white-color);
 	cursor: pointer;
 }
 .search-icon > i{
@@ -181,7 +184,7 @@ header{
 	border: 1px solid var(--border-color);
 	border-radius: 3px;
 	padding: 6px;
-	margin-left: 6px;
+	/* margin-left: 6px; */
 	color: var(--white-color);
 	background-color: var(--primary-color);
 	z-index: 123;
@@ -201,8 +204,9 @@ header{
 	display: none;
 	z-index: 111;
 }
-.wrap-search_comics header{
+.wrap-search_comics .search_comics-head{
 	position: relative;
+	display: block;
 	color: var(--white-color);
 	padding-bottom: 4px;
 	font-size: 14px;

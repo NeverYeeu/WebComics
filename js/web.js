@@ -54,16 +54,8 @@ function renderHeader() {
 						<i class="fa-solid fa-xmark"></i>
 					</div>
 					<div class="wrap-search_comics">
-						<header>Kết quả tìm kiếm:</header>
-						<div class="search_comic-info">
-							<a href="" class="search_comic-box">
-								<img src="./img/background.jpg" alt="" class="comic-box_img">
-								<div class="comic-box_info">
-									<span>Onepiece</span>
-									<span class="box_info-genre">Anime</span>
-								</div>
-							</a>
-						</div>
+						<span class="search_comics-head" >Kết quả tìm kiếm:</span>
+						<div class="search_comic-info"></div>
 						<div class="overlay-close"></div>
 					</div>
 				</div>

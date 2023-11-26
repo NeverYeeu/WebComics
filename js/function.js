@@ -217,16 +217,27 @@ function renderComment() {
 function handleWrapSearch() {
 	let searchbar = $('.search-input');
 	let iconSearchs = $$('.search-icon > i');
+	let searchComics = $('.wrap-search_comics');
+	let overLay = $('.overlay-close');
+
 	function handleIcon() {
 		iconSearchs[0].addEventListener('click', () => {
 			iconSearchs[0].classList.remove('open')
 			iconSearchs[1].classList.add('open')
 			searchbar.classList.add('open')
+			searchComics.classList.add('open')
 		})
 		iconSearchs[1].addEventListener('click', () => {
 			iconSearchs[1].classList.remove('open')
 			iconSearchs[0].classList.add('open')
 			searchbar.classList.toggle('open')
+			searchComics.classList.remove('open')
+		})
+		overLay.addEventListener('click' , () => {
+			iconSearchs[1].classList.remove('open')
+			iconSearchs[0].classList.add('open')
+			searchbar.classList.toggle('open')
+			searchComics.classList.remove('open')
 		})
 	} handleIcon();
 }
