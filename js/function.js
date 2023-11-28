@@ -9,6 +9,9 @@ let getComic = comics.comic;
 // Tạo danh sách truyện nhiều lượt xem ---------------------------------------------
 const newComics = getComic.reverse()
 const render = newComics.map(renderComics).join('')
+
+
+
 	export {render} 
 const randomComics = [...new Set(getComic.map((item) => {return item}))];
 // Tạo mảng ngẫu nhiên--------------------------------------------------------------
@@ -31,7 +34,6 @@ export {likeComics, viewComics, randomComics}
 function renderComics(item) {
 	let getChapter = item.listChapter.length;
 	let nameChap = item.listChapter[getChapter - 1].nameChapter
-
 	var {linkComic, linkImage, nameComic, viewer, liked, linkChap, updateChap} = item
 	return (`
 		<div class="right_list-info">

@@ -244,11 +244,10 @@ header{
 .comic-box_info{
 	width: 100%;
 }
-.comic-box_info span{
+.comic-box_info span:nth-child(1){
 	width: 100%;
 	text-decoration: none;
 	color: var(--white-color);
-
 	overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -259,9 +258,14 @@ header{
 	font-size: 13px;
 }
 .box_info-genre{
+	display: flex;
+	color: #ccc;
+	text-transform: capitalize;
 	font-size: 12px;
 	margin-top: 4px;
 	font-style: italic;
+	gap: 4px;
+	opacity: 0.4;
 }
 .overlay-close{
 	position: fixed;

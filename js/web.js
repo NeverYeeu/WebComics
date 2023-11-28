@@ -1,5 +1,9 @@
 import {comics} from "../api/comics.js"
 import {handleNavWeb} from "./function.js"
+
+import {comics as newSrc} from "../api/src.js"
+
+const srcComics = newSrc.comic;
 // -------------------------------------Nav-website-----------------------------------
 handleNavWeb();
 const $ = document.querySelector.bind(document)
@@ -93,7 +97,7 @@ function handleSearchBar() {
 	$('.overlay-close').addEventListener('click', () =>{
 		boxSearch.classList.remove('open');
 	})
-	searchComics(comics)
+	searchComics(srcComics)
 	function searchComics(arr) {
 		inputSearchBar.addEventListener('keyup', (e) => {
 			const searchData = e.target.value.toLowerCase();
@@ -104,17 +108,28 @@ function handleSearchBar() {
 			var displaySearch = (items) =>{
 				const searchComics = $('.search_comic-info');
 				searchComics.innerHTML = items.map((item) => {
-					var {linkImg, nameComic, genre, linkComic } = item;
+					var {linkImage, nameComic, linkComic } = item;
 					return (`
 								<a href="${linkComic }" class="search_comic-box">
-									<img src=${linkImg} alt="" class="comic-box_img">
+									<img src=${linkImage} alt="" class="comic-box_img">
 									<div class="comic-box_info">
 										<span>${nameComic}</span>
-										<span class="box_info-genre">${genre}</span>
+										<span class="box_info-genre"></span>
 									</div>
 								</a>
 							`)
 				}).join('');
+				function handleGenre() {
+					let genre = $$('.box_info-genre');
+					for (let i = 0; i < genre.length; ++i){
+						console.log(srcComics[i].nameGenre)
+						genre[i].innerHTML = srcComics[i].nameGenre.map((genre) => {
+							return (`
+								<p>${genre.genre}</p>
+							`)
+						});
+					}
+				} handleGenre();
 			}
 			displaySearch(filterData);
 		})

@@ -9,7 +9,10 @@ const comics = {
 			mainCharacter: "Nguyễn Văn Hoàng",
 			imageCharacter: "",
 			currentStatus: "On going",
-			nameGenre: ["Adventure", "Đời Thường"],
+			nameGenre: [
+				{genre: "Adventure", linkGenre: ""},
+				{genre: "Đời Thường", linkGenre: ""}
+			],
 			linkImage: "https://i.postimg.cc/CKd39qzg/29-10-2021-1.jpg",
 			linkBackImg: "https://i.postimg.cc/CKd39qzg/29-10-2021-1.jpg",
 			nameTranslator: [ 
@@ -20,7 +23,7 @@ const comics = {
 			],
 			linkConsult:"",
 			textPlot: "",
-			updateChap: "",
+			updateChap: 3,
 			listChapter: [
 				{
 					nameChapter: "Chap 1",
@@ -117,7 +120,7 @@ const comics = {
 			],
 			linkConsult:"",
 			textPlot: "Cốt Truyện",
-			updateChap: 2,
+			updateChap: 4,
 			listChapter: [
 				{ nameChapter: "Chapter 1", linkChapter: "ReadicCom-0003/chapter-1.html", timeUpdate: "20/11/2023"}
 			],
@@ -147,7 +150,7 @@ const comics = {
 			],
 			linkConsult:"",
 			textPlot: "Cốt Truyện",
-			updateChap: 2,
+			updateChap: 5,
 			listChapter: [
 				{ nameChapter: "Chapter 1", linkChapter: "ReadicCom-0004/chapter-1.html", timeUpdate: "22/11/2023"}
 			],
@@ -176,7 +179,7 @@ const comics = {
 			],
 			linkConsult:"",
 			textPlot: "text_plot",
-			updateChap: 2,
+			updateChap: 6,
 			listChapter: [
 				{ nameChapter: "Chapter 1", linkChapter: "ReadicCom-0005/chapter-1.html", timeUpdate: "22/11/2023"}
 			],

@@ -1,4 +1,4 @@
-import {comics} from "../api/comics.js"
+import {comics} from "../api/src.js"
 import {$, $$} from "./function.js"
 import {renderHeader, renderFooter, handleSearchBar, handleNavBar} from "./web.js"
 import {handleWrapSearch, pagination} from "./function.js"
@@ -20,7 +20,8 @@ boxSlide.innerHTML = handleLike;
 comicList.innerHTML = render;
 boxRanks[0].innerHTML = handleViewer;
 boxRanks[1].innerHTML = handleRandom;
-loadDay(comics); handleWrapSearch();
+let srcComics = comics.comic;
+loadDay(srcComics); handleWrapSearch();
 
 
 function handlMoveSlide() {
@@ -63,42 +64,53 @@ handlMoveSlide();
 function loadDay(arr) {
 	//Lấy ngày hôm nay truyện cập nhật
 	let dayOfYear = new Date();
+	console.log(arr)
 	var toDay = dayOfYear.getDay();
 	dayOfWeeks[toDay].classList.add('assigned');
 	var filterComic = arr.filter((e) => {
-		return e.updateDay == toDay;
+		return e.updateChap == toDay;
 	})
 	//Chèn truyện khi được tác động
 	updateList.innerHTML = filterComic.map(renderUpdate).join('');
+	renderGenre(filterComic)
 	dayOfWeeks.forEach((day, index) => {
 		day.addEventListener('click', () => {
 			$('.day-week.assigned').classList.remove('assigned');
 			day.classList.add('assigned')
 			let comicOfDay = arr.filter((e) => {
-				return e.updateDay == index;
+				return e.updateChap == index;
 			});
 			updateList.innerHTML = comicOfDay.map(renderUpdate).join('')
+			renderGenre(comicOfDay)
 		})
 	})
 }
 function renderUpdate(item) {
-	var {nameComic, linkImg, altImg, linkComic, liked, genre} = item;
+	var { linkImage, nameComic, linkComic, liked} = item;
 		return 	(`
 				<div class="update-comic">
 					<a href=${linkComic} class="update-comic_link">
-						<img src=${linkImg} alt=${altImg} class="comic_image">
+						<img src=${linkImage} alt=${nameComic} class="comic_image">
 						<p class="comic_name">${nameComic}</p>
 						<div class="comic_infor">
 							<span class="info_like" >
 								<i class="fa-solid fa-thumbs-up"></i>
 								${liked} 
 							</span>
-							<span class="info_like" >
-								${genre} 
-							</span>
+							<span class="info_like"></span>
 						</div>
 					</a>
 				</div>
 			`)
+}
+function renderGenre(comicOfDay) {
+	let genre = $$('.info_like:nth-child(2)');
+		for (let i = 0; i < genre.length; ++i){
+			genre[i].innerHTML = comicOfDay[i].nameGenre.map((genre) => {
+				return (`
+					<p>${genre.genre}</p>
+				`)
+			});
+		}
 }
 pagination();
