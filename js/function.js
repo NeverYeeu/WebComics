@@ -34,7 +34,9 @@ export {likeComics, viewComics, randomComics}
 function renderComics(item) {
 	let getChapter = item.listChapter.length;
 	let nameChap = item.listChapter[getChapter - 1].nameChapter
-	var {linkComic, linkImage, nameComic, viewer, liked, linkChap, updateChap} = item
+	let linkChap =  `chapter` + '/' +  item.listChapter[getChapter - 1].linkChapter
+	let updateChap = item.listChapter[getChapter - 1].timeUpdate
+	var {linkComic, linkImage, nameComic, viewer, liked} = item
 	return (`
 		<div class="right_list-info">
 			<a href=${linkComic} class="list-info_wrapper">
@@ -64,7 +66,9 @@ function renderComics(item) {
 function renderRank(item) {
 	let getChapter = item.listChapter.length;
 	let nameChap = item.listChapter[getChapter - 1].nameChapter
-	var {nameComic, linkImage,nameComic, linkChap, linkComic , viewer} = item;
+	let linkChap =  `chapter` + '/' +  item.listChapter[getChapter - 1].linkChapter
+
+	var {nameComic, linkImage,nameComic, linkComic , viewer} = item;
 			// var nameComic = item.nameComic;
 			return (
 			`

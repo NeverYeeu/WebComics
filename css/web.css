@@ -117,7 +117,7 @@ body{
 /* --------------------------------------------------------------------------------------------------- */
 header{
 	z-index: 2;
-	background-color: var(--box2-color);
+	background: rgba(0,0,0,0.8);
 	box-shadow: 1px 1px 2px var(--box1-color);
 
 }
@@ -126,7 +126,7 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	column-gap: 12px;
-	background: rgba(0,0,0,0.8);
+	padding: 20px;
 }
 .logo{
 	position: relative;
@@ -158,14 +158,14 @@ header{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    margin-right: 12px;
+    gap: 12px;
 }
 #searchBar{
 	position: relative;
-    padding: 4px 36px 4px 12px;
+    padding: 5px 36px 5px 12px;
     outline: none;
     z-index: 123;
-	min-width: 100px;
+	width: 250px;
 }
 .search-input{
 	width: 100%;
@@ -283,7 +283,7 @@ header{
 }
 
 .nav-list{
-	padding-left: 8px;
+	padding-left: 50px;
 	list-style: none;
 	display: flex;
 	align-items: center;
@@ -299,7 +299,7 @@ header{
 
 .filter-list_link{
 	display: block;
-	padding: 4px 12px;
+	padding: 4px 8px;
 	text-transform: uppercase;
 	color: var(--white-color);
 	text-decoration: none;
@@ -632,4 +632,5 @@ header{
   /* ------------------------------Footer----------------------------- */
 footer{
 	background-color: var(--box2-color);
+	color: var(--white);
 }

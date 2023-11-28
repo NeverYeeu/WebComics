@@ -1,38 +1,38 @@
 const comics = {
 	"comic": [
-		{
-			id: 0,
-			nameComic: "REadicCOm",
-			linkComic: "truyentranh",
-			nameOther: "REadicCOm",
-			nameAuthor: "XasDuong",
-			mainCharacter: "Nguyễn Văn Hoàng",
-			imageCharacter: "",
-			currentStatus: "On going",
-			nameGenre: [
-				{genre: "Adventure", linkGenre: ""},
-				{genre: "Đời Thường", linkGenre: ""}
-			],
-			linkImage: "https://i.postimg.cc/CKd39qzg/29-10-2021-1.jpg",
-			linkBackImg: "https://i.postimg.cc/CKd39qzg/29-10-2021-1.jpg",
-			nameTranslator: [ 
-				{name: "NeverYeeu", linkTranslator: "neverYEeu"}
-			],
-			srcConsult: [
-				{ nameConsult: "ReadComic", linkConsult: "readicCom.html"},
-			],
-			linkConsult:"",
-			textPlot: "",
-			updateChap: 3,
-			listChapter: [
-				{
-					nameChapter: "Chap 1",
-					linkChapter: ""
-				}
-			],
-			viewer: 4,
-			liked: 1,
-		},
+		// {
+		// 	id: 0,
+		// 	nameComic: "REadicCOm",
+		// 	linkComic: "truyentranh",
+		// 	nameOther: "REadicCOm",
+		// 	nameAuthor: "XasDuong",
+		// 	mainCharacter: "Nguyễn Văn Hoàng",
+		// 	imageCharacter: "",
+		// 	currentStatus: "On going",
+		// 	nameGenre: [
+		// 		{genre: "Adventure", linkGenre: ""},
+		// 		{genre: "Đời Thường", linkGenre: ""}
+		// 	],
+		// 	linkImage: "https://i.postimg.cc/CKd39qzg/29-10-2021-1.jpg",
+		// 	linkBackImg: "https://i.postimg.cc/CKd39qzg/29-10-2021-1.jpg",
+		// 	nameTranslator: [ 
+		// 		{name: "NeverYeeu", linkTranslator: "neverYEeu"}
+		// 	],
+		// 	srcConsult: [
+		// 		{ nameConsult: "ReadComic", linkConsult: "readicCom.html"},
+		// 	],
+		// 	linkConsult:"",
+		// 	textPlot: "",
+		// 	updateChap: 3,
+		// 	listChapter: [
+		// 		{
+		// 			nameChapter: "Chap 1",
+		// 			linkChapter: ""
+		// 		}
+		// 	],
+		// 	viewer: 4,
+		// 	liked: 1,
+		// },
 		{
 			id: 1,
 			nameComic: "Sekai Saikyou No Shinjuu Tsukai",
@@ -77,7 +77,6 @@ const comics = {
 				{ genre: "Harem", linkGenre: ""},
 				{ genre: "fantasy", linkGenre: ""},
 				{ genre: "Martial Art", linkGenre: ""},
-				{ genre: "Harem", linkGenre: ""},
 				{ genre: "Action", linkGenre: ""},
 			],
 			linkImage: "https://i.postimg.cc/63rGrKgZ/Please-Slay-The-Demon-Young-Master.jpg",
