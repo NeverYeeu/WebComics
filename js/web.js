@@ -12,64 +12,71 @@ const $$ = document.querySelectorAll.bind(document)
 function renderHeader() {
 	return(`
 		<div class="column header-website" >
-			<div class="logo">
-				<a href="/index.html">Readic-Com
-					<div class="hello">Hello World</div>
-				</a>
-			</div>
-			<ul class="nav-list">
-				<li class="filter-list"><a class="filter-list_link" href="">Readic Chat</a></li>
-				<li class="filter-list">
-					<a href="/genre.html" class="filter-list_link">Thể loại</a>
-					<div class="filter-list_wrapper">
-						<ul class="filter-list_genre">
-							<li><a href="" style="color: var(--primary-color)">Tất cả
-							</a></li>
-							<li><a href="">Action</a></li>
-							<li><a href="">Adult</a></li>
-							
-						</ul>
-					</div>
-				</li>
-				<li class="filter-list">
-					<a class="filter-list_link" href="/filtertop.html">Rank</a>
-					<div class="filter-list_wrapper">
-						<ul class="filter-list_genre filter-list_genre2">
-							<li><a href="" >
-								<i class="fa-regular fa-eye"></i>
-								Top all 
-							</a></li>
-							<!-- <li><a href=""><i class="fa-regular fa-eye"></i>Top Tháng</a></li>
-							<li><a href=""><i class="fa-regular fa-eye"></i>Top Tuần</a></li>
-							<li><a href=""><i class="fa-regular fa-eye"></i>Top Ngày</a></li>
-							<li><a href=""><i class="fa-regular fa-eye"></i>Top like</a></li>
-							<li><a href=""><i class="fa-regular fa-eye"></i>Top chapter</a></li> -->
-						</ul>
-					</div>
-				</li>
-	
-				<li class="filter-list"><a class="filter-list_link" href="/image.html">ReadicImg</a></li>
-				<li class="filter-list"><a class="filter-list_link" href="">Light novel</a></li>	
-			</ul>
-			<div class="wrap-search">
-					<div class="search-input"><input type="text" placeholder="Search..." id="searchBar" name="searchBar"></div> 
-					<div class="search-icon">
-						<i class="fa-solid fa-magnifying-glass open"></i>
-						<i class="fa-solid fa-xmark"></i>
-					</div>
-					<div class="wrap-search_comics">
-						<span class="search_comics-head" >Kết quả tìm kiếm:</span>
-						<div class="search_comic-info"></div>
-						<div class="overlay-close"></div>
-					</div>
+			<div class="website_box">
+				<div class="logo">
+					<a href="/index.html">Readic-Com
+						<div class="hello">Hello World</div>
+					</a>
 				</div>
-			<a href="/acount.html" class="user-log">
-				<span >Register</span>
-				<span>/</span>
-				<span>Log in</span>
-			</a>
-			<div id="navIcon" ><i class="fa-solid fa-bars"></i></div>
+				<nav></nav>
+				<div class="wrap-search">
+						<div class="search-input"><input type="text" placeholder="Search..." id="searchBar" name="searchBar"></div> 
+						<div class="search-icon">
+							<i class="fa-solid fa-magnifying-glass open"></i>
+							<i class="fa-solid fa-xmark"></i>
+						</div>
+						<div class="wrap-search_comics">
+							<span class="search_comics-head" >Kết quả tìm kiếm:</span>
+							<div class="search_comic-info"></div>
+							<div class="overlay-close"></div>
+						</div>
+					</div>
+				<a href="/acount.html" class="user-log">
+					<span >Register</span>
+					<span>/</span>
+					<span>Log in</span>
+				</a>
+				<div id="navIcon" ><i class="fa-solid fa-bars"></i></div>
+			</div>
+			<div class="nav-mobile"></div>
 		</div>
+	`)
+}
+function renderNavbar(){
+	return (`
+	<ul class="nav-list">
+		<li class="filter-list"><a class="filter-list_link" href="">Readic Chat</a></li>
+		<li class="filter-list">
+			<a href="/genre.html" class="filter-list_link">Thể loại</a>
+			<div class="filter-list_wrapper">
+				<ul class="filter-list_genre">
+					<li><a href="" style="color: var(--primary-color)">Tất cả
+					</a></li>
+					<li><a href="">Action</a></li>
+					<li><a href="">Adult</a></li>
+					
+				</ul>
+			</div>
+		</li>
+		<li class="filter-list">
+			<a class="filter-list_link" href="/filtertop.html">Rank</a>
+			<div class="filter-list_wrapper">
+				<ul class="filter-list_genre filter-list_genre2">
+					<li><a href="" >
+						<i class="fa-regular fa-eye"></i>
+						Top all 
+					</a></li>
+					<!-- <li><a href=""><i class="fa-regular fa-eye"></i>Top Tháng</a></li>
+					<li><a href=""><i class="fa-regular fa-eye"></i>Top Tuần</a></li>
+					<li><a href=""><i class="fa-regular fa-eye"></i>Top Ngày</a></li>
+					<li><a href=""><i class="fa-regular fa-eye"></i>Top like</a></li>
+					<li><a href=""><i class="fa-regular fa-eye"></i>Top chapter</a></li> -->
+				</ul>
+			</div>
+		</li>
+		<li class="filter-list"><a class="filter-list_link" href="/image.html">ReadicImg</a></li>
+		<li class="filter-list"><a class="filter-list_link" href="">Light novel</a></li>	
+	</ul>
 	`)
 }
 function renderFooter() {
@@ -86,7 +93,7 @@ function renderFooter() {
 	</div>
 	`)
 }
-export {renderHeader, renderFooter}
+export {renderHeader, renderFooter, renderNavbar}
 //Search bar-------------------------------------------------------------
 function handleSearchBar() {
 	const inputSearchBar = document.getElementById('searchBar');
@@ -122,7 +129,6 @@ function handleSearchBar() {
 				function handleGenre() {
 					let genre = $$('.box_info-genre');
 					for (let i = 0; i < genre.length; ++i){
-						console.log(srcComics[i].nameGenre)
 						genre[i].innerHTML = srcComics[i].nameGenre.map((genre) => {
 							return (`
 								<p>${genre.genre}</p>

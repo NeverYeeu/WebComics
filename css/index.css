@@ -254,6 +254,7 @@
 .update-date li{
 	opacity: 0.8;
 	padding: 4px 6px;
+	text-align: center;
 	color: var(--white2-color)
 }
 .update-date li.assigned{

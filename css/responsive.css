@@ -39,9 +39,6 @@
 	}
 	.hello{display: none}
 	.nav-list{ 
-		position: absolute;
-		top: 100%; left: -8px;
-		width: 102%;
 		display: none;
 	}
 	.nav-list.open{display: block}

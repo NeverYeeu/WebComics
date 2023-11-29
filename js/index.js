@@ -1,9 +1,10 @@
 import {comics} from "../api/src.js"
 import {$, $$} from "./function.js"
-import {renderHeader, renderFooter, handleSearchBar, handleNavBar} from "./web.js"
+import {renderHeader, renderFooter, handleSearchBar, handleNavBar, renderNavbar} from "./web.js"
 import {handleWrapSearch, pagination} from "./function.js"
 import {render, handleRandom, handleLike, handleViewer} from "./function.js"
 // --------------------------------------------------------------------------------------------
+let sizeScreen = screen.width;
 const comicList = $('.comics-right_list');
 var boxRanks = $$('.comis-box_random');
 const boxSlide = $('.slide-content');
@@ -14,6 +15,15 @@ const header = $('header')
 const footer = $('footer')
 header.innerHTML = renderHeader();
 footer.innerHTML = renderFooter();
+const navbar = $('nav');
+const mobile = $('.nav-mobile');
+console.log(sizeScreen)
+if(sizeScreen > 480){
+	navbar.innerHTML = renderNavbar();
+}
+else if(sizeScreen <= 480) {
+	mobile.innerHTML = renderNavbar();
+}
 	handleSearchBar(); handleNavBar()
 	// 
 boxSlide.innerHTML = handleLike;
@@ -25,7 +35,6 @@ loadDay(srcComics); handleWrapSearch();
 
 
 function handlMoveSlide() {
-	let sizeScreen = screen.width;
 	var sizeLinks = $$('.content_comic-img');
 	if  (sizeScreen <= 480) {
 		sizeLinks.forEach((img) => {

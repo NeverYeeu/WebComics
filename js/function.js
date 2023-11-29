@@ -10,8 +10,6 @@ let getComic = comics.comic;
 const newComics = getComic.reverse()
 const render = newComics.map(renderComics).join('')
 
-
-
 	export {render} 
 const randomComics = [...new Set(getComic.map((item) => {return item}))];
 // Tạo mảng ngẫu nhiên--------------------------------------------------------------
